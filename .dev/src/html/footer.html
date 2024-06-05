@@ -6,7 +6,66 @@
 </footer>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="./../node_modules/jquery/dist/jquery.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
+	integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
+	crossorigin="anonymous"
+	referrerpolicy="no-referrer"
+></script>
 <script src="./js/index.js"></script>
 <script>
 	AOS.init({ disable: "mobile" })
+</script>
+
+<script>
+	$("#telefone").mask("(99) 99999-9999")
+
+	document.getElementById("leadForm").addEventListener("submit", function (event) {
+		event.preventDefault()
+
+		const formData = new FormData(this)
+		const data = new URLSearchParams()
+
+		for (const pair of formData) {
+			data.append(pair[0], pair[1])
+		}
+
+		const url = "https://llapi.leadlovers.com/webapi/lead?token=E16E82A1BF614E189A322744B7CA116D"
+
+		fetch(url, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+			},
+			body: data.toString(),
+		})
+			.then((response) => response.json())
+			.then((result) => {
+				console.log(result)
+				// Redirecionar para a página typ.html após o envio bem-sucedido
+				window.location.href = "typ.html"
+			})
+			.catch((error) => console.error("Error:", error))
+	})
+</script>
+
+<script>
+	;(function (ll, mo, n, i, t, o, r) {
+		ll["LeadLoversMonitorObject"] = o
+		ll[o] =
+			ll[o] ||
+			function () {
+				;(ll[o].q = ll[o].q || []).push(arguments)
+			}
+		r = mo.createElement(n)
+		r.src = i
+		r.type = t
+		r.async = 1
+		r.defer = 1
+		mo.body.appendChild(r)
+	})(window, document, "script", "https://lib.leadlovers.site/scripts/monitor/index.js", "module", "mnt")
+
+	mnt("init", "e4815956-3376-4e63-9301-46a948f09164")
+	mnt("scout")
+	mnt("capture")
 </script>

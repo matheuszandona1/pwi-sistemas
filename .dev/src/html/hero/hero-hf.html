@@ -14,25 +14,28 @@
 		<div class="hero__form half">
 			<h2 class="default__title smaller text-center">Experimente gratuitamente por 7 dias!</h2>
 			<p class="default__desc">Complete os campos abaixo:</p>
-			<form action="" class="contact__form">
+			<form id="leadForm" action="typ.html" class="contact__form">
 				<div class="form-gap">
 					<div class="input_wrap">
-						<input type="text" required />
+						<input type="text" id="nome" name="nome" required />
 						<label><img src="./assets/person.svg" alt="" /> Nome*</label>
 					</div>
 					<div class="input_wrap">
-						<input type="email" required />
+						<input type="email" id="email" name="email" required />
 						<label><img src="./assets/mail.svg" alt="" /> E-mail*</label>
 					</div>
 					<div class="input_wrap">
-						<input type="tel" required />
+						<input type="tel" id="telefone" name="telefone" required />
 						<label><img src="./assets/phone.svg" alt="" /> Telefone*</label>
 					</div>
 					<div class="input_wrap">
-						<input type="text" required />
+						<input type="text" id="cargo" name="cargo" required />
 						<label><img src="./assets/maleta.svg" alt="" /> Cargo*</label>
 					</div>
 				</div>
+				<input type="text" name="MachineCode" value="117838" hidden />
+				<input type="text" name="EmailSequenceCode" value="206751" hidden />
+				<input type="text" name="SequenceLevelCode" value="1" hidden />
 				<button type="submit" class="button bigger">quero saber mais</button>
 			</form>
 		</div>
