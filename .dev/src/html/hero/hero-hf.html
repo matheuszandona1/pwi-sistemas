@@ -1,4 +1,4 @@
-<section class="hero top" data-aos="fade-down" data-aos-delay="300">
+<section class="hero top" data-aos="fade-down" data-aos-delay="300" id="hero">
 	<div class="hero__container">
 		<div class="hero__content">
 			<div class="hero__logo"><img src="./assets/vixen.svg" alt="" /></div>
@@ -29,8 +29,17 @@
 						<label><img src="./assets/phone.svg" alt="" /> Telefone*</label>
 					</div>
 					<div class="input_wrap">
-						<input type="text" id="cargo" name="cargo" required />
-						<label><img src="./assets/maleta.svg" alt="" /> Cargo*</label>
+						<select name="cargo" id="cargo" required>
+							<option value="">Qual seu cargo?</option>
+							<option value="Proprietário">Proprietário</option>
+							<option value="Gerente">Gerente</option>
+							<option value="Vendedor">Vendedor</option>
+							<option value="T.I">T.I</option>
+						</select>
+					</div>
+					<div class="input_wrap">
+						<input type="text" id="NomeDaEmpresa" name="NomeDaEmpresa" required />
+						<label><img src="./assets/maleta.svg" alt="" /> Nome da Empresa*</label>
 					</div>
 				</div>
 				<input type="text" name="MachineCode" value="117838" hidden />

@@ -130,6 +130,14 @@
 			input {
 				width: 100%;
 				max-width: 100%;
+				color: $texto-legenda;
+			}
+			select {
+				width: 100%;
+				border: 1px solid $texto-legenda;
+				@include s-border;
+				padding: 16px;
+				color: $texto-legenda;
 			}
 		}
 		button {
